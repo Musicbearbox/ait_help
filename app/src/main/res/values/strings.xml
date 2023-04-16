@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">AitHelp</string>
+
+    <string name="signup">Signup</string>
+
+    <string name="tag_line">tag line</string>
+    <string name="welcome">welcome</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="username">username</string>
+    <string name="telephone">telephone</string>
+
+    <!--button-->
+    <string name="login">LOGIN</string>
+    <string name="forget_password">Forget password?</string>
+    <string name="create_account">Create Account</string>
+    <string name="goto_login">Goto Login</string>
+
+</resources>

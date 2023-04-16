@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="color_primary">#008577</color>
+    <color name="color_primary_dark">#00574B</color>
+    <color name="color_accent">#D81B60</color>
+
+    <color name="color_layout_dark">#D6000000</color>
+    <color name="color_layout_semi_dark">#60000000</color>
+    <color name="color_primary_blue">#131EEA</color>
+    <color name="color_primary_blue_dark">#131EEA</color>
+    <color name="color_accent_orange">#F13413</color>
+
+    <color name="color_white">#FFFFFF</color>
+    <color name="color_text_primary">#212121</color>
+    <color name="color_text_hint">#808080</color>
+    <color name="color_background">#FFDEE5EC</color>
+    <color name="color_light_blue">#FF75A7F2</color>
+    <color name="color_light_grey">#FFE5E6E6</color>
+
+    <!-- background -->
+    <color name="color_icon_blue">#4FC1E9</color>
+    <color name="color_icon_green">#A0D468</color>
+    <color name="color_icon_mint">#48CFAD</color>
+    <color name="color_icon_red">#ED5565</color>
+    <color name="color_icon_pink">#EC87C0</color>
+    <color name="color_icon_purple">#AC92EC</color>
+    <color name="color_icon_grey_light">#F5F7FA</color>
+    <color name="color_icon_grey">#CCD1D9</color>
+    <color name="color_icon_grey_dark">#656D78</color>
+    <color name="color_icon_yellow">#FFCE54</color>
+    <color name="color_icon_orange">#FC6E51</color>
+
+</resources>
