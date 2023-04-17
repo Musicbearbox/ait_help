@@ -1,6 +1,7 @@
 package com.xiong.aithelp.model
 
 import android.content.SharedPreferences
+import android.util.Log.d
 import com.xiong.aithelp.dao.UserDao
 
 
@@ -14,6 +15,7 @@ class UserModel {
     var photo: String = ""
     var isAdmin: Boolean = false
     var token: String = ""
+    var expireTime: String = ""
 
     constructor(sharedPref:SharedPreferences){
         this.sharedPref = sharedPref
@@ -49,6 +51,7 @@ class UserModel {
         this.photo = ""
         this.isAdmin = false
         this.token = ""
+        d("empty","empty")
     }
 
     fun isLogin(): Boolean {
@@ -64,5 +67,12 @@ class UserModel {
         this.photo = userDao.photo
         this.isAdmin = userDao.isAdmin
         this.token = userDao.token
+    }
+
+    fun isAvailable(): Boolean {
+        if(this.token=="")
+            return false
+        else
+            return true
     }
 }

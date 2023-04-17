@@ -20,4 +20,18 @@
     <string name="create_account">Create Account</string>
     <string name="goto_login">Goto Login</string>
 
+    <!-- new-page  -->
+    <string name="label_title">Title</string>
+    <string name="label_tag">Tag</string>
+    <string name="label_description">Description</string>
+    <string name="label_reward">Reward</string>
+
+    <string name="hint_title">Title</string>
+    <string name="hint_tag">Tag</string>
+    <string name="hint_description">Description</string>
+    <string name="hint_reward">Reward</string>
+
+    <string name="new_button_text">Create Help</string>
+    <string name="add_help">Add Help</string>
+
 </resources>

@@ -1,24 +1,18 @@
 package com.xiong.aithelp
 
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
+import android.util.Log.d
 import android.widget.ImageView
-import android.widget.Toast
 import androidx.lifecycle.ViewModelStoreOwner
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xiong.aithelp.dao.HelpDao
-import com.xiong.aithelp.dao.UserDao
 import com.xiong.aithelp.model.ApiModel
 import com.xiong.aithelp.model.UserModel
 import com.xiong.aithelp.service.ApiService
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -39,16 +33,21 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
 //        val sharedPref = this.getSharedPreferences(apiModel.dataFile, Context.MODE_PRIVATE)
 //        val userModel = UserModel(sharedPref)
 //        userModel.email = "elliot@asia.ait"
-
+        val login = Intent(this,LoginActivity::class.java)
         loginBt.setOnClickListener {
-            val login = Intent(this,LoginActivity::class.java)
             startActivity(login)
 //            Toast.makeText(this, userModel.email, Toast.LENGTH_SHORT).show()
 //            userModel.update()
         }
 
-        loadList()
+        val newBt = findViewById<ImageView>(R.id.bt_add_help)
+        val newPage = Intent(this,NewActivity::class.java)
+        newBt.setOnClickListener {
+            startActivity(newPage)
+        }
 
+        loadList()
+        checkLogin(login)
     }
 
 
@@ -95,5 +94,16 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
             recyclerView.adapter = adapter
     }
 
+    override fun onDestroy() {
+        d("destroy","destroy")
+        this.user.empty()
+        this.user.update()
+        super.onDestroy()
+    }
 
+    fun checkLogin(loginPage: Intent) {
+        if(!this.user.isAvailable()){
+            startActivity(loginPage)
+        }
+    }
 }

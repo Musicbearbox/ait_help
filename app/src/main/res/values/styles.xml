@@ -21,4 +21,44 @@
         <item name="android:textSize">16sp</item>
     </style>
 
+
+    <!--new page-->
+
+    <style name="PageNewLineLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+    <style name="PageNewLineIcon">
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:contentDescription">123</item>
+        <item name="android:tint">@color/color_text_hint</item>
+    </style>
+    <style name="PageNewLineEdit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@null</item>
+        <item name="android:inputType">text</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="PageNewLineView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:background">@color/color_text_hint</item>
+        <item name="android:inputType">text</item>
+    </style>
+
 </resources>

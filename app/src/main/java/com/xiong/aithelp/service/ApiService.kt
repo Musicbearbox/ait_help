@@ -2,6 +2,7 @@ package com.xiong.aithelp.service
 
 import com.google.gson.annotations.SerializedName
 import com.xiong.aithelp.dao.HelpDao
+import com.xiong.aithelp.dao.OriginalHelpDao
 import com.xiong.aithelp.dao.UserDao
 import okhttp3.RequestBody
 import retrofit2.Call
@@ -18,4 +19,7 @@ interface ApiService {
 
     @GET("api/helps/helpList")
     fun helpList(): Call<List<HelpDao>>
+
+    @POST("api/helps/helpNew")
+    fun newHelp(@Body requestBody: RequestBody): Call<OriginalHelpDao>
 }

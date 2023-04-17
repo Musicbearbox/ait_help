@@ -19,6 +19,7 @@
     <color name="color_accent_orange">#F13413</color>
 
     <color name="color_white">#FFFFFF</color>
+    <color name="color_white_trans">#CCFFFFFF</color>
     <color name="color_text_primary">#212121</color>
     <color name="color_text_hint">#808080</color>
     <color name="color_background">#FFDEE5EC</color>
