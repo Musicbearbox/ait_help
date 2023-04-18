@@ -3,6 +3,8 @@ package com.xiong.aithelp.model
 import android.content.SharedPreferences
 import android.util.Log.d
 import com.xiong.aithelp.dao.UserDao
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 
 class UserModel {
@@ -15,7 +17,8 @@ class UserModel {
     var photo: String = ""
     var isAdmin: Boolean = false
     var token: String = ""
-    var expireTime: String = ""
+    var expireTime: String = "2023-04-08 15:30:00"
+    val formaterPattern: String = "yyyy-MM-dd HH:mm:ss"
 
     constructor(sharedPref:SharedPreferences){
         this.sharedPref = sharedPref
@@ -27,6 +30,10 @@ class UserModel {
         this.photo = this.sharedPref.getString("photo","").toString()
         this.isAdmin = this.sharedPref.getBoolean("isAdmin",false)
         this.token = this.sharedPref.getString("token","").toString()
+        val defaultTime = LocalDateTime.now().minusDays(1)
+        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+        val formattedDateTime = defaultTime.format(formatter)
+        this.expireTime = this.sharedPref.getString("expireTime",formattedDateTime).toString()
     }
 
     fun update(){
@@ -39,6 +46,11 @@ class UserModel {
         editor.putString("photo",this.photo)
         editor.putBoolean("isAdmin",this.isAdmin)
         editor.putString("token",this.token)
+        val after = LocalDateTime.now().plusHours(3)
+        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+        val afterDateTime = after.format(formatter)
+        this.expireTime = afterDateTime
+        editor.putString("expireTime",this.expireTime)
         editor.apply()
     }
 
@@ -51,6 +63,10 @@ class UserModel {
         this.photo = ""
         this.isAdmin = false
         this.token = ""
+        val defaultTime = LocalDateTime.now().minusDays(1)
+        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+        val formattedDateTime = defaultTime.format(formatter)
+        this.expireTime = formattedDateTime
         d("empty","empty")
     }
 
@@ -70,9 +86,14 @@ class UserModel {
     }
 
     fun isAvailable(): Boolean {
-        if(this.token=="")
-            return false
-        else
-            return true
+        // now
+        val currentDateTime = LocalDateTime.now()
+
+        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+        val thisExpireTime = LocalDateTime.parse(this.expireTime, formatter)
+        val currentTimeFormat = currentDateTime.format(formatter)
+        d("available",currentTimeFormat)
+        d("available",this.expireTime)
+        return thisExpireTime > currentDateTime
     }
 }

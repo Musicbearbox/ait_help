@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 可滚动的内容 -->
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1800dp"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac metus at sapien iaculis blandit nec vitae enim. Duis bibendum, justo id cursus tempor, nulla enim efficitur est, vitae tempor metus turpis nec arcu. Sed tristique ante vitae turpis rutrum porta. Integer et enim sollicitudin, auctor nisl sed, pulvinar lectus. Aliquam erat volutpat. Nam nec quam ac nisl faucibus bibendum eget vel lacus. Proin eget orci nec nulla facilisis egestas. Ut et felis vel nunc malesuada tincidunt non non mi. Sed vel finibus ex, id aliquam eros. Praesent venenatis ac risus eu pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas a purus non justo blandit molestie vel vel est. Aenean euismod volutpat urna, eu fringilla leo pulvinar nec. Donec bibendum urna in euismod lobortis." />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

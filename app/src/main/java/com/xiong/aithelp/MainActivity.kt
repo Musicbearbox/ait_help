@@ -18,10 +18,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.time.LocalDateTime
 
 class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
     private lateinit var user:UserModel
     private lateinit var api:ApiModel
+    private lateinit var caller:Call<List<HelpDao>>
 //    private lateinit var myContext:Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,8 +69,8 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
             .addConverterFactory(GsonConverterFactory.create())
             .build()
         val apiService = retrofit.create(ApiService::class.java)
-
-        apiService.helpList().enqueue(object : Callback<List<HelpDao>> {
+        val caller = apiService.helpList()
+        caller.enqueue(object : Callback<List<HelpDao>> {
             override fun onResponse(call: Call<List<HelpDao>>, response: Response<List<HelpDao>>) {
                 val helpList: List<HelpDao>? = response.body()
                 if (response.code() == 200 && helpList != null) {
@@ -95,14 +97,14 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
     }
 
     override fun onDestroy() {
-        d("destroy","destroy")
-        this.user.empty()
-        this.user.update()
         super.onDestroy()
+        if(!caller.isExecuted && caller.isCanceled.not()){
+            caller.cancel()
+        }
     }
 
     fun checkLogin(loginPage: Intent) {
-        if(!this.user.isAvailable()){
+        if (!this.user.isAvailable()) {
             startActivity(loginPage)
         }
     }
