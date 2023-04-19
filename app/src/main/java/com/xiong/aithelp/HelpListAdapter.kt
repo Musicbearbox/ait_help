@@ -45,7 +45,7 @@ class HelpListAdapter(private val datalist: List<HelpDao> ,private val context:C
             val id = help.id
             d("click",id)
             val intent = Intent(context, DetailActivity::class.java)
-            intent.putExtra("title", id)
+            intent.putExtra("id", id)
             context.startActivity(intent)
         }
     }

@@ -1,32 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailActivity">
+    tools:context=".DetailActivity"
+    android:contentDescription="Scroll view for help detail">
 
-    <ScrollView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
+        android:layout_height="wrap_content"
+        >
+
+        <View
+            android:id="@+id/new_bg_1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:background="@color/color_icon_red"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+        <View
+            android:id="@+id/new_bg_2"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="@drawable/background_red_wave"
+            app:layout_constraintTop_toBottomOf="@id/new_bg_1"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="300dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ill_music"/>
 
         <LinearLayout
+            android:id="@+id/new_frame"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="-40dp"
+            android:paddingStart="40dp"
+            android:paddingEnd="40dp"
+            app:layout_constraintTop_toBottomOf="@id/new_bg_2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-            <!-- 可滚动的内容 -->
+            <LinearLayout style="@style/PageNewLineLayout"
+                android:gravity="center">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="@color/color_text_primary"
+                    android:text="@string/add_help"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
+                    />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="1800dp"
-                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac metus at sapien iaculis blandit nec vitae enim. Duis bibendum, justo id cursus tempor, nulla enim efficitur est, vitae tempor metus turpis nec arcu. Sed tristique ante vitae turpis rutrum porta. Integer et enim sollicitudin, auctor nisl sed, pulvinar lectus. Aliquam erat volutpat. Nam nec quam ac nisl faucibus bibendum eget vel lacus. Proin eget orci nec nulla facilisis egestas. Ut et felis vel nunc malesuada tincidunt non non mi. Sed vel finibus ex, id aliquam eros. Praesent venenatis ac risus eu pulvinar. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas a purus non justo blandit molestie vel vel est. Aenean euismod volutpat urna, eu fringilla leo pulvinar nec. Donec bibendum urna in euismod lobortis." />
+            </LinearLayout>
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_new_title" />
+
+                <TextView
+                    android:id="@+id/dt_title_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_title"
+                    android:textStyle="bold"
+                    android:text=""/>
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_new_tag" />
+
+                <TextView
+                    android:id="@+id/dt_tag_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_tag" />
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_user" />
+
+                <TextView
+                    android:id="@+id/dt_user_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_user" />
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_new_reward" />
+
+                <TextView
+                    android:id="@+id/dt_reward_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_reward" />
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_dt_time" />
+
+                <TextView
+                    android:id="@+id/dt_time_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_time" />
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <LinearLayout style="@style/PageNewLineLayout">
+
+                <ImageView
+                    style="@style/PageNewLineIcon"
+                    android:src="@drawable/baseline_new_description" />
+
+                <TextView
+                    android:id="@+id/dt_des_text"
+                    style="@style/PageDetailText"
+                    android:hint="@string/hint_description" />
+
+            </LinearLayout>
+
+            <View style="@style/PageNewLineView" />
+
+            <Button
+                android:id="@+id/button_solve"
+                style="@style/PageDetailButton"
+                android:text="@string/bt_resolve_help"
+                android:background="@drawable/blue_button_background"
+                android:visibility="gone"/>
 
         </LinearLayout>
-    </ScrollView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/dt_comments_frame"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/color_icon_grey"
+            app:layout_constraintTop_toBottomOf="@id/new_frame"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <LinearLayout
+                style="@style/PageCommentWrap"
+                android:layout_marginTop="1dp">
+                <LinearLayout style="@style/PageDetailLayout"
+                    android:gravity="left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:textColor="@color/color_text_primary"
+                        android:text="@string/text_comments_title"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"
+                        />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dt_view_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+            <LinearLayout
+                style="@style/PageCommentWrap">
+                <EditText
+                    android:id="@+id/dt_comment_edit"
+                    style="@style/PageDetailCommentEdit"
+                    android:hint="@string/hint_comment"
+                    android:layout_marginBottom="20dp"
+                    />
+
+                <Button
+                    android:id="@+id/bt_comment_publish"
+                    style="@style/PageDetailButton"
+                    android:text="@string/new_comment_bt_text"
+                    android:background="@drawable/orange_button_background"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

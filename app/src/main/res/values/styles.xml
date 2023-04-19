@@ -61,4 +61,62 @@
         <item name="android:inputType">text</item>
     </style>
 
+    <!--detail page-->
+    <style name="PageDetailLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+    </style>
+
+
+    <style name="PageDetailText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:textColor">@color/color_icon_grey_dark</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="PageDetailButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:titleMarginTop">20dp</item>
+        <item name="android:background">@drawable/primary_button_background</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="PageDetailCommentEdit">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">50dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/white_button_background</item>
+        <item name="android:inputType">text</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+        <item name="android:textColor">@color/color_text_primary</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="PageCommentWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@color/color_white</item>
+        <item name="android:layout_marginBottom">10dp</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingTop">20dp</item>
+        <item name="android:paddingEnd">40dp</item>
+        <item name="android:paddingBottom">20dp</item>
+    </style>
+
 </resources>

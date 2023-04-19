@@ -31,13 +31,15 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
         setContentView(R.layout.activity_main)
         userInit()
 
-        val loginBt = findViewById<ImageView>(R.id.bt_user_center)
+        val userCenterBt = findViewById<ImageView>(R.id.bt_user_center)
 //        val sharedPref = this.getSharedPreferences(apiModel.dataFile, Context.MODE_PRIVATE)
 //        val userModel = UserModel(sharedPref)
 //        userModel.email = "elliot@asia.ait"
         val login = Intent(this,LoginActivity::class.java)
-        loginBt.setOnClickListener {
-            startActivity(login)
+        val userCenterPage = Intent(this,UsercenterActivity::class.java)
+        userCenterBt.setOnClickListener {
+//            checkLogin(login)
+            startActivity(userCenterPage)
 //            Toast.makeText(this, userModel.email, Toast.LENGTH_SHORT).show()
 //            userModel.update()
         }
@@ -45,6 +47,7 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
         val newBt = findViewById<ImageView>(R.id.bt_add_help)
         val newPage = Intent(this,NewActivity::class.java)
         newBt.setOnClickListener {
+//            checkLogin(login)
             startActivity(newPage)
         }
 
@@ -96,6 +99,7 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
             recyclerView.adapter = adapter
     }
 
+
     override fun onDestroy() {
         super.onDestroy()
         if(!caller.isExecuted && caller.isCanceled.not()){
@@ -103,7 +107,7 @@ class MainActivity : AppCompatActivity() ,ViewModelStoreOwner{
         }
     }
 
-    fun checkLogin(loginPage: Intent) {
+    public fun checkLogin(loginPage: Intent) {
         if (!this.user.isAvailable()) {
             startActivity(loginPage)
         }

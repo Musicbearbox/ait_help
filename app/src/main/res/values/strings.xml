@@ -3,7 +3,7 @@
 
     <string name="signup">Signup</string>
 
-    <string name="tag_line">tag line</string>
+    <string name="tag_line">have a nice day</string>
     <string name="welcome">welcome</string>
     <string name="email">email</string>
     <string name="password">password</string>
@@ -25,13 +25,28 @@
     <string name="label_tag">Tag</string>
     <string name="label_description">Description</string>
     <string name="label_reward">Reward</string>
+    <string name="label_user">Poster</string>
+    <string name="label_time">Publish time</string>
 
     <string name="hint_title">Title</string>
     <string name="hint_tag">Tag</string>
     <string name="hint_description">Description</string>
     <string name="hint_reward">Reward</string>
+    <string name="hint_user">Poster</string>
+    <string name="hint_time">Publish time</string>
 
     <string name="new_button_text">Create Help</string>
     <string name="add_help">Add Help</string>
+    <string name="new_comment_bt_text">Submit Comments</string>
 
+    <string name="bt_resolve_help">Resolve</string>
+    <string name="bt_accept_help">Accept</string>
+
+    <string name="text_comments_title">Comments</string>
+    <string name="hint_comment">Please input your comment!</string>
+
+    <!-- usercenter -->
+    <string name="bt_logout_text">Log Out</string>
+
+    <string name="uc_title_text">User Center</string>
 </resources>

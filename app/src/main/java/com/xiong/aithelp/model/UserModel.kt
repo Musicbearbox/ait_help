@@ -46,10 +46,10 @@ class UserModel {
         editor.putString("photo",this.photo)
         editor.putBoolean("isAdmin",this.isAdmin)
         editor.putString("token",this.token)
-        val after = LocalDateTime.now().plusHours(3)
-        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
-        val afterDateTime = after.format(formatter)
-        this.expireTime = afterDateTime
+//        val after = LocalDateTime.now().plusHours(3)
+//        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+//        val afterDateTime = after.format(formatter)
+//        this.expireTime = afterDateTime
         editor.putString("expireTime",this.expireTime)
         editor.apply()
     }
@@ -63,10 +63,10 @@ class UserModel {
         this.photo = ""
         this.isAdmin = false
         this.token = ""
-        val defaultTime = LocalDateTime.now().minusDays(1)
-        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
-        val formattedDateTime = defaultTime.format(formatter)
-        this.expireTime = formattedDateTime
+//        val defaultTime = LocalDateTime.now().minusDays(1)
+//        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+//        val formattedDateTime = defaultTime.format(formatter)
+        this.expireTime = "2023-04-08 15:30:00"
         d("empty","empty")
     }
 
@@ -83,9 +83,17 @@ class UserModel {
         this.photo = userDao.photo
         this.isAdmin = userDao.isAdmin
         this.token = userDao.token
+        val after = LocalDateTime.now().plusHours(3)
+        val formatter = DateTimeFormatter.ofPattern(this.formaterPattern)
+        val afterDateTime = after.format(formatter)
+        this.expireTime = afterDateTime
     }
 
     fun isAvailable(): Boolean {
+        if(this.userId == ""){
+            return false
+        }
+
         // now
         val currentDateTime = LocalDateTime.now()
 
